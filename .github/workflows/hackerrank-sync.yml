@@ -1,0 +1,21 @@
+name: HackerRank Sync
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Show repository information
+        run: |
+          echo "HackerRank → GitHub Sync"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow is working!"
